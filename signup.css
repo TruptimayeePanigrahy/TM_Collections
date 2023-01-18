@@ -74,6 +74,7 @@
 #navTwo>div>a:nth-child(7){
     border: none;
 }
+
 #mailInp{
     display: flex;
     justify-content: center;
@@ -182,4 +183,36 @@ margin-top: 20px;
    
     margin: auto;
     color: rgb(100, 98, 98);
+}
+/* sign up section  */
+
+ #fname,#lname,#email,#password,#contact{
+    margin: 20px auto;
+    width: 100%;
+    padding: 10px;
+}
+#create{
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 20px ;
+    color: white;
+    background-color: #001f49;
+    cursor: pointer;
+}
+#signupin{
+    width: 40%;
+padding: 30px;
+margin: auto;
+}
+#signupin h1,h3{
+    margin: 20px auto;
+}
+.check{
+    display:flex ;
+}
+.check p{
+    margin-left: 10px;
+}
+.space{
+    margin-top: 20px;
 }

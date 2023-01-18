@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TM-Collections</title>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -65,40 +65,48 @@
     <div id="signupin">
       <div>
         <h1>creat account</h1>
-        <p>Title</p>
-        <input type="text" />
+
         <p>First Name</p>
-        <input type="text" />
+
+        <input type="text" id="fname" />
         <p>Last Name</p>
-        <input type="text" />
+        <input type="text" id="lname" />
         <p>Email Adress</p>
-        <input type="text" />
+        <input type="email" id="email" />
         <p>Password</p>
+
         <p>
           Your password should be at least 8 characters in length, and contain
           at least 1 number and 1 letter.
         </p>
-        <input type="text" />
-        <input type="checkbox" />
-        <p>Show</p>
+        <input type="password" id="password" />
+        <div class="check">
+          <input type="checkbox" />
+          <p>Show</p>
+        </div>
         <h3>Phone</h3>
         <p>
           We'll only use this to contact you about your order or to send you SMS
           about your delivery
         </p>
-        <input type="text" />
-        <input type="checkbox" />
-        <p>Emails about offers and our exciting new ranges.</p>
-        <input type="checkbox" />
-        <p>
-          If you'd prefer not to receive mail from selected companies, please
-          check this box
-        </p>
-        <p>
+        <input type="text" id="contact" />
+        <div class="check">
+          <input type="checkbox" />
+          <p>Emails about offers and our exciting new ranges.</p>
+        </div>
+        <div class="check">
+          <input type="checkbox" />
+          <p>
+            If you'd prefer not to receive mail from selected companies, please
+            check this box
+          </p>
+        </div>
+        <p class="space">
           By creating an account with Charles Tyrwhitt, you confirm that you
           have read and accept our Terms and Conditions and See privacy policy
         </p>
-        <button>CREAT AN ACCOUNT</button>
+        <button id="create">CREATE AN ACCOUNT</button>
+        <a href="login.html">Already have an account?</a>
       </div>
     </div>
     <div id="mailInp">
@@ -218,4 +226,32 @@
     </div>
   </body>
 </html>
-<script></script>
+<script>
+  let userData = JSON.parse(localStorage.getItem("userdata")) || [];
+  document.getElementById("create").addEventListener("click", () => {
+    let firstName = document.getElementById("fname").value;
+    let lastName = document.getElementById("lname").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let contact = document.getElementById("contact").value;
+    let filtered = userData.filter((user, index) => {
+      if (user.email === email) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    if (filtered.length > 0) {
+      alert("The Email Already Exist");
+    } else {
+      userData.push({
+        name: firstName + lastName,
+        email: email,
+        password: password,
+        contact: contact,
+      });
+      localStorage.setItem("userdata", JSON.stringify(userData));
+      window.location.href = "login.html";
+    }
+  });
+</script>
