@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#nav{
+    display: grid;
+    background-color: white;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows: repeat(1,1fr);
+    padding: 20px 20px;
+}
+#nav-left{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0% 5%;
+   
+}
+.logImg{
+    width: 15%;
+    display: flex;
+    justify-content:space-around ;
+}
+.projectName{
+    text-align: center;
+    text-transform: uppercase;
+}
+.projectName>p{
+   font-size:2rem ;
+}
+/* right side of navbar */
+#nav-right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.searchbox{
+    display: flex;
+    align-items: center;
+    background-color: rgba(179, 180, 181, 0.31);
+    width: 60%;
+    justify-content: space-between;
+    padding: 5px 5px;
+   border-radius: 6px;
+
+}
+.searchbox>input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: none;
+}
+/* nav-two starts here */
+#navTwo{
+    background-color: rgba(112, 140, 169, 0.31);
+    width: 100%;
+    padding: 2px 0px;
+    position:sticky;
+    top:0;
+    z-index: 100;
+}
+#navTwo>div{
+    display: flex;
+    justify-content: center;
+}
+#navTwo>div>a{
+    text-decoration: none;
+    padding: 0px 20px  ;
+    color: rgb(115, 112, 112);
+    border-right:1px solid  rgb(115, 112, 112) ;
+    margin: 15px 0px;
+}
+#navTwo>div>a:nth-child(7){
+    border: none;
+}
+#mailInp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(212, 229, 242);
+    margin-top: 30px;
+}
+#mailInp input{
+    padding: 10px 40px ;
+    border: 2px solid #001f49;
+    outline: none;
+    color:rgb(156, 70, 70);
+}
+#mailInp button{
+padding: 12px;
+    background-color:#001f49;
+    color: white;
+    border: none;
+    cursor: pointer;
+   
+}
+#mailInp p{
+    margin-right: 20px;
+    color: rgb(61, 59, 59);
+}
+#footer{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    
+    justify-content: space-around;
+}
+#footer>div>p:nth-child(1){
+    font-weight: bold;
+    color: #001f49;
+    margin-bottom: 20px;
+}
+#footer p{
+    margin: 10px;
+    color: rgb(101, 99, 99);
+}
+#footer>div>div>a{
+    margin:10px 10px;
+}
+#footer>div>div{
+    margin-top: 20px;
+}
+/* footer two starts here  */
+#footerTwo>div:nth-child(1){
+text-align: center;
+display: flex;
+justify-content: space-around;
+width: 30%;
+margin: auto;
+margin-top: 20px;
+}
+#footerTwo p{
+    color: rgb(100, 98, 98);
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#footerTwo{
+    border-top: 1px solid  grey;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    border-bottom: 1px solid  grey;
+}
+#footerTwo img{
+    height: 60px;
+    width: 60px;
+
+}
+.mid{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#flower{
+    text-align: center;
+    
+    border-bottom: 1px solid  grey;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+
+}
+/* lastfooter starts here  */
+#lastfooter>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    font-size: 15px;
+    color: rgb(100, 98, 98);
+}
+#lastfooter>div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+   
+    margin: auto;
+    color: rgb(100, 98, 98);
+}
