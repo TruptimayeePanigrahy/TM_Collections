@@ -274,13 +274,16 @@ border: 1px solid white;
     margin-bottom: 20px;
 }
 /* donate start here  */
+#donate{
+    position: relative;
+}
 #donate >img{
 position: relative;
 }
 #donate div{
     position: absolute;
-    left: 50%;
-    bottom:20%;
+    left: 60%;
+    bottom:40%;
     text-align: center;
 }
 #donate h1{

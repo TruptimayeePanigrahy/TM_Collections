@@ -74,6 +74,47 @@
 #navTwo>div>a:nth-child(7){
     border: none;
 }
+/* login session start   */
+#login{
+    width:70%;
+    margin: 20px auto ;
+   
+
+}
+.login-main{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-left{
+    width: 40%;
+margin-top: 30px ;
+}
+#email,#password{
+    margin: 20px auto;
+    width: 100%;
+    padding: 10px;
+}
+.login-left button,#login-right button{
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 20px ;
+    color: white;
+    background-color: #001f49;
+    cursor: pointer;
+}
+.creat{
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+}
+.creat p{
+    margin-left: 10px;
+}
+#login-right h3{
+    margin-bottom: 20px;
+}
 #mailInp{
     display: flex;
     justify-content: center;

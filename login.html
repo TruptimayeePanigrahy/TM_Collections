@@ -63,40 +63,45 @@
       </div>
     </div>
     <div id="login">
-      <div>
-        <h1>My Account</h1>
-        <p>Email address</p>
-        <input type="text" />
-        <p>Password</p>
-        <input type="text" />
-        <a href="">Forgotten Your Password?</a>
-        <button>LOG IN</button>
-      </div>
-      <div>
-        <h1>New customers</h1>
-        <p>Set up an account with us and you will be able to:</p>
-        <div class="creat">
-          <img
-            src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dwdb6da176/images/svg-icons/order_history.svg"
-            alt=""
-          />
-          <p>Check order status</p>
+      <h3>My Account</h3>
+      <div class="login-main">
+        <div class="login-left">
+          <p>Email address</p>
+          <input type="text" id="email" />
+          <p>Password</p>
+          <input type="password" id="password" />
+          <div>
+            <a href="">Forgotten Your Password?</a>
+          </div>
+
+          <button id="log">LOG IN</button>
         </div>
-        <div class="creat">
-          <img
-            src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw3a36da3a/images/svg-icons/address_book.svg"
-            alt=""
-          />
-          <p>Save multiple addresses to your address book</p>
+        <div id="login-right">
+          <h3>New customers</h3>
+          <p>Set up an account with us and you will be able to:</p>
+          <div class="creat">
+            <img
+              src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dwdb6da176/images/svg-icons/order_history.svg"
+              alt=""
+            />
+            <p>Check order status</p>
+          </div>
+          <div class="creat">
+            <img
+              src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw3a36da3a/images/svg-icons/address_book.svg"
+              alt=""
+            />
+            <p>Save multiple addresses to your address book</p>
+          </div>
+          <div class="creat">
+            <img
+              src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw2ed88bb6/images/svg-icons/personal_details.svg"
+              alt=""
+            />
+            <p>Set your size and monogramming preference</p>
+          </div>
+          <button id="creat-account">CREAT AN ACCOUNT NOW</button>
         </div>
-        <div class="creat">
-          <img
-            src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw2ed88bb6/images/svg-icons/personal_details.svg"
-            alt=""
-          />
-          <p>Set your size and monogramming preference</p>
-        </div>
-        <a href="SIGNUP.html"><button>CREAT AN ACCOUNT NOW</button></a>
       </div>
     </div>
     <div id="mailInp">
@@ -216,4 +221,32 @@
     </div>
   </body>
 </html>
-<script></script>
+<script>
+  document.getElementById("creat-account").addEventListener("click", () => {
+    window.location.href = "./SIGNUP.html";
+  });
+  let userData = JSON.parse(localStorage.getItem("userdata")) || [];
+  document.getElementById("log").addEventListener("click", () => {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let select = userData.filter((element, index) => {
+      if (element.email === email) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    if (select.length == 0) {
+      alert("Email doesnot Exist");
+      window.location.href = "./SIGNUP.html";
+    } else {
+      if (select[0].password == password) {
+        alert("Login Successful");
+        window.location.href = "./index.html";
+      } else {
+        alert("Your password is Incorrect");
+      }
+    }
+  });
+</script>
