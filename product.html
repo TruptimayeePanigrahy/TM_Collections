@@ -49,7 +49,12 @@
           ></i>
         </div>
         <div class="bagImg">
-          <i class="fa-solid fa-bag-shopping" style="font-size: 30px"></i>
+          <a href="./cart.html">
+            <i
+              class="fa-solid fa-bag-shopping"
+              style="font-size: 30px; color: black"
+            ></i
+          ></a>
         </div>
       </div>
     </div>
@@ -76,17 +81,17 @@
         </select>
       </div>
       <div class="select">
-        <select id="filter">
+        <select onChange="sortbyrating()" id="filterbyrating">
           <option value="">Filter By Rating</option>
-          <option value="4-5">4-5</option>
-          <option value="3-4">3-4</option>
-          <option value="2-3">2-3</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
         </select>
-        <select id="filters">
+        <select onchange="sortbyprice()" id="filterbyprice">
           <option value="">Filter By price</option>
-          <option value="0-100">0-100</option>
-          <option value="101-300">101-300</option>
-          <option value="301-500">301-500</option>
+          <option value="100">100</option>
+          <option value="300">300</option>
+          <option value="500">500</option>
         </select>
       </div>
     </div>
@@ -210,142 +215,159 @@
     </div>
   </body>
   <script>
+    let array = JSON.parse(localStorage.getItem("cart-product")) || [];
     let Data = [
       {
+        id: 1,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw13eea116/hi-res/FON0540NAV_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
 
         Name: "Spread collar Non-Iron Twill Shirt-Navy",
-        Price: "$99",
+        Price: 99,
         Offer: "$59.75 MULTIBUY",
         rating: 4.7,
       },
       {
+        id: 2,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9626ce83/hi-res/FON0540PNK_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
 
         Name: "Spread collar Non-Iron Twill Shirt-Pink",
-        Price: "$199",
+        Price: 199,
         Offer: "$59.75 MULTIBUY",
         rating: 4.3,
       },
       {
+        id: 3,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwad6bc5cf/hi-res/FON2482LPK_COLLAR_DETAIL.jpg?sw=430&sh=540",
 
         Name: "Spread collar Non-Iron check Shirt-Light-Pink",
-        Price: "$99",
+        Price: 99,
         Offer: "$59.75 MULTIBUY",
         rating: 4.5,
       },
       {
+        id: 4,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw5b61ddb5/hi-res/FOR2339LBU_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
 
         Name: "Spread collar Non-Iron check Shirt-Light-Blue",
-        Price: "$199",
+        Price: 199,
         Offer: "$59.75 MULTIBUY",
         rating: 4.1,
       },
       {
+        id: 5,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw3ff05452/hi-res/CSN0368RED_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Spread collar Non-Iron check Shirt-Light-Blue",
-        Price: "$199",
+        Price: 199,
         Offer: "$59.75 MULTIBUY",
         rating: 4.1,
       },
       {
+        id: 6,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw2bc1be25/hi-res/CSR0964DEN_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down  Non-Iron Check Shirt-Maron-Red",
-        Price: "$299",
+        Price: 299,
         Offer: "$59.75 MULTIBUY",
         rating: 4.9,
       },
       {
+        id: 7,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwfa2d1a2f/hi-res/CSN0420MRN_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down  Non-Iron Check Shirt-Maron-Red",
-        Price: "$199",
+        Price: 199,
         Offer: "$59.75 MULTIBUY",
         rating: 4.9,
       },
       {
+        id: 8,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9fc84598/hi-res/CSN0426TEL_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down Non-Iron Check Shirt-Teal-Green",
-        Price: "$99",
+        Price: 99,
         Offer: "$59.75 MULTIBUY",
         rating: 3.1,
       },
       {
+        id: 9,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw54d14706/hi-res/CSR0806NAV_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Collarless Listen T-shirt",
-        Price: "$399",
+        Price: 399,
         Offer: "$59.75 MULTIBUY",
         rating: 2.8,
       },
       {
+        id: 10,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw20f8e4b7/hi-res/CSR0956WHT_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down Collar  Short Sleeve Shirt",
-        Price: "$399",
+        Price: 399,
         Offer: "$59.75 MULTIBUY",
         rating: 3.7,
       },
       {
+        id: 11,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb6fe3714/hi-res/CSB0037FRE_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Semi-Spread Collar Print Shirt - French Blue",
 
-        Price: "$299",
+        Price: 299,
         Offer: "$59.75 MULTIBUY",
         rating: 3.9,
       },
       {
+        id: 12,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw6e1a13d2/hi-res/CSB0200MLT_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Semi-Spread Collar  Print Shirt - Multi",
 
-        Price: "$199",
+        Price: 199,
         Offer: "$59.75 MULTIBUY",
         rating: 4.8,
       },
       {
+        id: 13,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf91cbff9/hi-res/CSR0905SKY_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down Collar Shirt - Sky Blue",
 
-        Price: "$99",
+        Price: 99,
         Offer: "$59.75 MULTIBUY",
         rating: 3.5,
       },
       {
+        id: 14,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4c0f659e/hi-res/CSQ0028PNK_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "England Rugby Button-Down Stripe Shirt - Pink",
 
-        Price: "$299",
+        Price: 299,
         Offer: "$59.75 MULTIBUY",
         rating: 5.0,
       },
       {
+        id: 15,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw300da162/hi-res/CSB0079PUR_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Made with Liberty  Collar Shirt - Purple",
 
-        Price: "$499",
+        Price: 499,
         Offer: "$59.75 MULTIBUY",
         rating: 4.0,
       },
       {
+        id: 16,
         image:
           "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw48f6336a/hi-res/CSR2036MRN_MODEL_UNTUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
         Name: "Button-Down Collar Plain Shirt - Maroon Red",
 
-        Price: "$499",
+        Price: 499,
         Offer: "$59.75 MULTIBUY",
         rating: 4.5,
       },
@@ -365,7 +387,7 @@
         name.innerText = element.Name;
 
         let price = document.createElement("h3");
-        price.innerText = Number(element.Price);
+        price.innerText = `$${element.Price}`;
 
         let offers = document.createElement("p");
         offers.innerText = element.Offer;
@@ -375,6 +397,25 @@
 
         let button = document.createElement("button");
         button.innerText = "Add To Cart";
+        button.addEventListener("click", () => {
+          let filtered = array.filter((ele, i) => {
+            if (element.id == ele.id) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+          if (filtered.length > 0) {
+            alert("Product Already In Cart");
+          } else {
+            let obj = { ...element, quantity: 1 };
+
+            array.push({ ...element, quantity: 1 });
+
+            localStorage.setItem("cart-product", JSON.stringify(array));
+            alert("Product Added To cart successfully");
+          }
+        });
 
         box.append(image, name, price, offers, rateInp, button);
         container.append(box);
@@ -385,9 +426,10 @@
     let select1 = document.getElementById("sort");
     let select2 = document.getElementById("sorting");
     select1.addEventListener("change", () => {
-      compare(select1.value);
+      compareTwo(select1.value);
     });
-    function compare(value) {
+    function compareTwo(value) {
+      console.log(value);
       if (select1.value == "") {
         display(Data);
       } else {
@@ -458,13 +500,14 @@
       display(filtered);
     });
     // filter function
-    let filterfunction = document.getElementById("filter");
-    filterfunction.addEventListener("change", () => {
-      if (filterfunction.value == "") {
+
+    function sortbyrating() {
+      let filterbyratingInp = document.getElementById("filterbyrating");
+      if (filterbyratingInp.value == "") {
         display(Data);
       } else {
         let filtered = Data.filter((ele, ind) => {
-          if (ele.rating == filterfunction.value) {
+          if (ele.rating <= Number(filterbyratingInp.value)) {
             return true;
           } else {
             return false;
@@ -472,14 +515,15 @@
         });
         display(filtered);
       }
-    });
-    let filter = document.getElementById("filters");
-    filter.addEventListener("change", () => {
+    }
+
+    function sortbyprice() {
+      let filter = document.getElementById("filterbyprice");
       if (filter.value == "") {
         display(Data);
       } else {
         let filtered = Data.filter((ele, ind) => {
-          if (ele.Price == filter.value) {
+          if (ele.Price <= Number(filter.value)) {
             return true;
           } else {
             return false;
@@ -487,6 +531,6 @@
         });
         display(filtered);
       }
-    });
+    }
   </script>
 </html>
