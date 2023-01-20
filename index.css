@@ -98,7 +98,7 @@ margin-top: -27px;
 }
 .content button{
     padding: 15px 20px;
-    width: 30%;
+    width: 40%;
 }
 .content div{
     display: flex;
@@ -139,7 +139,7 @@ text-align: center;
     color:yellow;
     text-align: left;
     font-size: 25px;
-    margin-top: 7px;
+    
 }
 /* SmiLELY STARTS HERE  */
 #smile{
@@ -439,7 +439,7 @@ margin-top: 20px;
     margin: auto;
     color: rgb(100, 98, 98);
 }
-/* scrollpara  */
+/* scrollpara  starts */
 .one{
     display: flex;
     justify-content: center;
@@ -455,6 +455,7 @@ margin-top: 20px;
 #scrollpara{
     background-color: rgb(232, 237, 243);
     padding: 30px;
+    margin-top: 30px;
 }
 #scrollpara>p{
 text-align: center;
@@ -465,6 +466,23 @@ color: rgb(100, 98, 98);
     font-weight: bold;
     color: blue;
     font-size: 14px;
+}
+#scrollpara .two{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px
+}
+.two p{
+    color: rgb(88, 86, 86);
+    
+}
+.subTwo h4{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.subTwo p:nth-child(3){
+    font-size: 10px;
 }
 
 
