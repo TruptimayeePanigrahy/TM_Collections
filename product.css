@@ -27,8 +27,11 @@
     text-transform: uppercase;
     color: #001f49;
 }
-.projectName>p{
+.projectName>a{
    font-size:2rem ;
+   text-decoration: none;
+   color: #001f49;
+   font-weight: bold;
 }
 /* right side of navbar */
 #nav-right{
@@ -52,6 +55,11 @@
     padding: 10px;
     background: none;
 }
+.searchbox button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
 /* nav-two starts here */
 #navTwo{
     background-color: rgba(112, 140, 169, 0.31);
@@ -72,6 +80,10 @@
     border-right:1px solid  rgb(115, 112, 112) ;
     margin: 15px 0px;
 }
+#navTwo>div>a:hover{
+    color:#001f49;
+    background-color: #fff;
+    }
 #navTwo>div>a:nth-child(7){
     border: none;
 }

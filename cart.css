@@ -27,8 +27,11 @@
     text-transform: uppercase;
     color: #001f49;
 }
-.projectName>p{
+.projectName>a{
    font-size:2rem ;
+   text-decoration: none;
+   color: #001f49;
+   font-weight: bold;
 }
 /* right side of navbar */
 #nav-right{
@@ -72,6 +75,10 @@
     border-right:1px solid  rgb(115, 112, 112) ;
     margin: 15px 0px;
 }
+#navTwo>div>a:hover{
+    color:#001f49;
+    background-color: #fff;
+    }
 #navTwo>div>a:nth-child(7){
     border: none;
 }
@@ -222,4 +229,21 @@ span{
     margin-right: 30px ;
     width: 20%;
     margin-left: auto;
+}
+#proceed button{
+    color: white;
+    background-color: #001f49;
+       width: 100%;
+        padding: 10px;
+        text-align:center;
+        cursor: pointer;
+        font-size: 20px;
+}
+#proceed{
+   
+   
+    margin-top: 20px;
+    margin-right: 30px ;
+    width: 20%;
+    margin-left: auto; 
 }
