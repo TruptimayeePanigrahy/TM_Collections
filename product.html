@@ -34,7 +34,7 @@
           ></a>
         </div>
         <div class="projectName">
-          <p>CHARLES TYRWHITT</p>
+          <a href="./index.html"> <p>TM-COLLECTIONS</p></a>
 
           <h5>Germyn Street London</h5>
         </div>
@@ -42,11 +42,13 @@
 
       <div id="nav-right">
         <div class="searchbox">
-          <input type="text" placeholder="Search" />
-          <i
-            class="fa-sharp fa-solid fa-magnifying-glass"
-            style="font-size: 30px"
-          ></i>
+          <input type="text" placeholder="Search" id="searchInp" />
+          <button id="search-btn">
+            <i
+              class="fa-sharp fa-solid fa-magnifying-glass"
+              style="font-size: 30px"
+            ></i>
+          </button>
         </div>
         <div class="bagImg">
           <a href="./cart.html">
@@ -487,11 +489,14 @@
       }
     }
     // search function
-    let input = document.getElementById("searchbox").value;
+    let searchbutton = document.getElementById("search-btn");
 
-    input.addEventListener("click", (e) => {
+    searchbutton.addEventListener("click", () => {
+      let searchparam = document.getElementById("searchInp").value;
       let filtered = Data.filter((ele, i) => {
-        if (ele.Name.toUpperCase().includes(input.toUpperCase()) === true) {
+        if (
+          ele.Name.toUpperCase().includes(searchparam.toUpperCase()) === true
+        ) {
           return true;
         } else {
           return false;

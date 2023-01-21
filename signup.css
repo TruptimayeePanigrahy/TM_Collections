@@ -26,9 +26,16 @@
     text-align: center;
     text-transform: uppercase;
 }
-.projectName>p{
+.projectName>a{
    font-size:2rem ;
+   text-decoration: none;
+   color: #001f49;
+   font-weight: bold;
 }
+#navTwo>div>a:hover{
+    color:#001f49;
+    background-color: #fff;
+    }
 /* right side of navbar */
 #nav-right{
     display: flex;
