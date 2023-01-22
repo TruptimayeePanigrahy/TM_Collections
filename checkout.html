@@ -11,19 +11,19 @@
     <div class="container">
       <div class="left">
         <h2>BILLING ADDRESS</h2>
-        <form>
+        <section>
           Full Name
-          <input type="text" placeholder=" Enter Name" />
+          <input type="text" placeholder=" Enter Name" id="name" />
           Email
-          <input type="email" placeholder=" Enter Email" />
+          <input type="email" placeholder=" Enter Email" id="email" />
           Mobile Number
-          <input type="number" placeholder=" Enter number" />
+          <input type="number" placeholder=" Enter number" id="mobile" />
           Adress
-          <input type="text" placeholder=" Enter Adress" />
+          <input type="text" placeholder=" Enter Adress" id="adredd" />
           <div id="zip">
             <label>
               State
-              <select>
+              <select id="state">
                 <option value="">Choose State</option>
                 <option value="odisha">odisha</option>
                 <option value="Andrapradesh">Andrapradesh</option>
@@ -38,11 +38,14 @@
               <input type="number" placeholder="Zip Code" id="z-input" />
             </label>
           </div>
-        </form>
+        </section>
       </div>
       <div class="right">
-        <h2>PAYMENT</h2>
-        <form>
+        <div id="payment">
+          <h2>PAYMENT</h2>
+          <h2 id="total"></h2>
+        </div>
+        <section>
           Accepted Cards
           <div>
             <img
@@ -60,13 +63,17 @@
           </div>
           <br />
           Credit Card Number
-          <input type="number" placeholder=" Enter Credit number" />
+          <input
+            type="number"
+            placeholder=" Enter Credit number"
+            id="cardnumber"
+          />
           Exp Month
-          <input type="text" placeholder=" Enter Adress" />
+          <input type="text" placeholder=" Enter Month" id="month" />
           <div id="zip">
             <label>
               Exp Year
-              <select>
+              <select id="year">
                 <option value="">Choose Year</option>
                 <option>2023</option>
                 <option>2024</option>
@@ -75,12 +82,29 @@
             </label>
             <label>
               CVV
-              <input type="number" placeholder="CVV" id="z-input" />
+              <input type="number" placeholder="CVV" id="c-input" />
             </label>
           </div>
-          <button>Proceed To Pay</button>
-        </form>
+          <button onclick="fun()" id="onsubmit">Proceed To Pay</button>
+        </section>
       </div>
     </div>
   </body>
 </html>
+<script>
+  let totalPrice = JSON.parse(localStorage.getItem("check-pay")) || 0;
+  document.getElementById("total").innerText = `$${totalPrice}`;
+
+  function fun() {
+    let nameInp = document.getElementById("name").value;
+    let cvvInp = document.getElementById("c-input").value;
+    let creditnumber = document.getElementById("cardnumber").value;
+    console.log(nameInp, cvvInp, creditnumber);
+    if (nameInp && cvvInp && creditnumber) {
+      alert("Order Successfully Placed");
+      window.location.href = "./index.html";
+    } else {
+      alert("Please fill the details");
+    }
+  }
+</script>

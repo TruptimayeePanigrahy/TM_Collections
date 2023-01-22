@@ -231,3 +231,13 @@ margin-top: 20px;
     margin: auto;
     color: rgb(100, 98, 98);
 }
+#admin{
+   
+    color: #001f49;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}

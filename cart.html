@@ -34,7 +34,7 @@
           ></a>
         </div>
         <div class="projectName">
-          <a href="./index.html"> <p>TM-COLLECTIONS</p></a>
+          <a href="./index.html"> <p>TM COLLECTIONS</p></a>
 
           <h5>Germyn Street London</h5>
         </div>
@@ -75,7 +75,7 @@
       <!-- total append here  -->
     </p>
     <div id="proceed">
-      <a href="./checkout.html"> <button>Check Out</button></a>
+      <button id="checkpayment">Check Out</button>
     </div>
 
     <div id="mailInp">
@@ -294,6 +294,12 @@
       }
 
       total.innerText = `Total Price :- $${sum}`;
+      return sum;
     }
+    let checkbutton = document.getElementById("checkpayment");
+    checkbutton.addEventListener("click", () => {
+      localStorage.setItem("check-pay", JSON.stringify(grandTotal(array2)));
+      window.location.href = "./checkout.html";
+    });
   </script>
 </html>
