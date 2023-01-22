@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin page</title>
+    <link rel="stylesheet" href="admin.css".css">
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="">Products</a>
+      <a href="./user.html">User</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Offers</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Here all rows will be appended  -->
+      </tbody>
+    </table>
+  </body>
+</html>
+<script>
+  let Data = [
+    {
+      id: 1,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw13eea116/hi-res/FON0540NAV_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+
+      Name: "Spread collar Non-Iron Twill Shirt-Navy",
+      Price: 99,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.7,
+    },
+    {
+      id: 2,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9626ce83/hi-res/FON0540PNK_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+
+      Name: "Spread collar Non-Iron Twill Shirt-Pink",
+      Price: 199,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.3,
+    },
+    {
+      id: 3,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwad6bc5cf/hi-res/FON2482LPK_COLLAR_DETAIL.jpg?sw=430&sh=540",
+
+      Name: "Spread collar Non-Iron check Shirt-Light-Pink",
+      Price: 99,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.5,
+    },
+    {
+      id: 4,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw5b61ddb5/hi-res/FOR2339LBU_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+
+      Name: "Spread collar Non-Iron check Shirt-Light-Blue",
+      Price: 199,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.1,
+    },
+    {
+      id: 5,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw3ff05452/hi-res/CSN0368RED_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Spread collar Non-Iron check Shirt-Light-Blue",
+      Price: 199,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.1,
+    },
+    {
+      id: 6,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw2bc1be25/hi-res/CSR0964DEN_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down  Non-Iron Check Shirt-Maron-Red",
+      Price: 299,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.9,
+    },
+    {
+      id: 7,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwfa2d1a2f/hi-res/CSN0420MRN_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down  Non-Iron Check Shirt-Maron-Red",
+      Price: 199,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.9,
+    },
+    {
+      id: 8,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9fc84598/hi-res/CSN0426TEL_COLLAR_DETAIL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down Non-Iron Check Shirt-Teal-Green",
+      Price: 99,
+      Offer: "$59.75 MULTIBUY",
+      rating: 3.1,
+    },
+    {
+      id: 9,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw54d14706/hi-res/CSR0806NAV_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Collarless Listen T-shirt",
+      Price: 399,
+      Offer: "$59.75 MULTIBUY",
+      rating: 2.8,
+    },
+    {
+      id: 10,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw20f8e4b7/hi-res/CSR0956WHT_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down Collar  Short Sleeve Shirt",
+      Price: 399,
+      Offer: "$59.75 MULTIBUY",
+      rating: 3.7,
+    },
+    {
+      id: 11,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb6fe3714/hi-res/CSB0037FRE_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Semi-Spread Collar Print Shirt - French Blue",
+
+      Price: 299,
+      Offer: "$59.75 MULTIBUY",
+      rating: 3.9,
+    },
+    {
+      id: 12,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw6e1a13d2/hi-res/CSB0200MLT_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Semi-Spread Collar  Print Shirt - Multi",
+
+      Price: 199,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.8,
+    },
+    {
+      id: 13,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf91cbff9/hi-res/CSR0905SKY_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down Collar Shirt - Sky Blue",
+
+      Price: 99,
+      Offer: "$59.75 MULTIBUY",
+      rating: 3.5,
+    },
+    {
+      id: 14,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4c0f659e/hi-res/CSQ0028PNK_MODEL_TUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "England Rugby Button-Down Stripe Shirt - Pink",
+
+      Price: 299,
+      Offer: "$59.75 MULTIBUY",
+      rating: 5.0,
+    },
+    {
+      id: 15,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw300da162/hi-res/CSB0079PUR_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Made with Liberty  Collar Shirt - Purple",
+
+      Price: 499,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.0,
+    },
+    {
+      id: 16,
+      image:
+        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw48f6336a/hi-res/CSR2036MRN_MODEL_UNTUCKED.jpg?sw=430&sh=538&sm=fit&q=42",
+      Name: "Button-Down Collar Plain Shirt - Maroon Red",
+
+      Price: 499,
+      Offer: "$59.75 MULTIBUY",
+      rating: 4.5,
+    },
+  ];
+  display(Data);
+  function display(data) {
+    let container = document.querySelector("tbody");
+    container.innerHTML = null;
+    data.forEach((element, index) => {
+      let box = document.createElement("tr");
+
+      let id = document.createElement("td");
+      id.innerText = element.id;
+      let image = document.createElement("img");
+      image.src = element.image;
+
+      let name = document.createElement("td");
+      name.innerText = element.Name;
+
+      let price = document.createElement("td");
+      price.innerText = `$${element.Price}`;
+
+      let offers = document.createElement("td");
+      offers.innerText = element.Offer;
+
+      let rateInp = document.createElement("td");
+      rateInp.innerText = "Rating:-" + Number(element.rating);
+
+      box.append(id, image, name, price, offers, rateInp);
+      container.append(box);
+    });
+  }
+
+  // cart page
+</script>

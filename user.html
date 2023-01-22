@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+      }
+      table {
+        width: 100%;
+      }
+      table {
+        padding: 10px;
+
+        background-color: #001f49;
+        color: white;
+      }
+      table img {
+        height: 150px;
+        width: 200px;
+      }
+      .navbar {
+        background-color: rgb(109, 134, 134);
+        padding: 30px;
+        color: green;
+        width: 100%;
+        text-align: center;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-right: 50px;
+      }
+      tr {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="./admin.html">Products</a>
+      <a href="">User</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Offers</th>
+          <th>Rating</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Here all rows will be appended  -->
+      </tbody>
+    </table>
+  </body>
+</html>
+<script>
+  let array2 = JSON.parse(localStorage.getItem("cart-product")) || [];
+  displayTwo(array2);
+  grandTotal(array2);
+  function displayTwo(data) {
+    let container = document.querySelector("tbody");
+    container.innerHTML = null;
+    data.forEach((element, index) => {
+      let box = document.createElement("tr");
+      let id = document.createElement("td");
+      id.innerText = element.id;
+      let image = document.createElement("img");
+      image.src = element.image;
+
+      let name = document.createElement("td");
+      name.innerText = element.Name;
+
+      let price = document.createElement("td");
+      price.innerText = `$${element.Price}`;
+
+      let offers = document.createElement("td");
+      offers.innerText = element.Offer;
+
+      let rateInp = document.createElement("td");
+      rateInp.innerText = "Rating:-" + Number(element.rating);
+
+      let spanInp = document.createElement("td");
+      spanInp.innerText = element.quantity;
+      //   let total = document.createElement("td");
+      //   total.innerText = element.grandTotal(array2);
+
+      box.append(
+        id,
+        image,
+        name,
+        price,
+        offers,
+        rateInp,
+
+        spanInp
+      );
+
+      container.append(box);
+    });
+  }
+  function grandTotal(Data) {
+    let total = document.getElementById("grandtotal");
+    let sum = 0;
+    for (let i = 0; i < Data.length; i++) {
+      sum += Data[i].Price * Data[i].quantity;
+    }
+
+    total.innerText = `Total Price :- $${sum}`;
+    return sum;
+  }
+</script>

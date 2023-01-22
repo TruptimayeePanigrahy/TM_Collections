@@ -121,73 +121,51 @@ margin-top: -27px;
     width: 100%;
  }
 /* scrooling images starts  */
-#scrollImg{
+#scrollImg {
+    display: flex;
+    align-items: center;
+    margin: -30px 0px;
+  }
+  .wrapper {
     width: 100%;
-        height: 400px;
-        margin: 200px auto;
-        overflow: hidden;
-        position: relative;
-}
-#scrollImg>div{
-        min-width: 330px;
-
-        height: 200px;
-        position: relative;
-        left: 0;
-        text-align: center;
-        padding-top: 60px;
-        font-size: 100px;
-        margin: 10px 20px;
-
-        transition: 0.5%;
-}
-#scrollImg>div>img{
-    height: 400px;
-}
-/* carousel button  */
-
-      .c-button {
-        position: absolute;
-        top: 40%;
-        font-size: 60px;
-        font-weight: bold;
-        color: red;
-        left: 0.5%;
-        z-index: 1;
-      }
-      .c-button:nth-child(2) {
-        left: 98%;
-        text-align: right;
-      }
-         #c-child-container {
-        width: 98%;
-        height: 300px;
-
-        margin: 10px auto;
-        display: flex;
-        justify-content: left;
-        overflow-x: auto;
-      }
-      #c-child-container::-webkit-scrollbar {
-        visibility: hidden;
-      }
-      /* carousel end here  */
-.uppertext{
+  }
+  .wrapper .carousel {
+    max-width: 98%;
+    margin: auto;
+  }
+  .carousel .card {
+    background-color: teal;
+    line-height: 250px;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .carousel .card > img {
+    border-radius: 10px;
+  }
+  .uppertext {
+    line-height: 20px;
     position: absolute;
-    bottom: 15px;
+    bottom: 30px;
     left: 20px;
-}
-.uppertext>p:nth-child(1){
+  }
+  .uppertext > p:nth-child(1) {
     color: white;
     text-align: left;
     font-size: 18px;
-}
-.uppertext>p:nth-child(2){
-    color:yellow;
+  }
+  .uppertext > p:nth-child(2) {
+    color: yellow;
     text-align: left;
     font-size: 25px;
-    
-}
+  }
+
+   
 /* SmiLELY STARTS HERE  */
 #smile{
     position: relative;

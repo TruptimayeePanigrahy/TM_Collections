@@ -20,6 +20,11 @@ body{
 h2{
    color: #001f49;
 }
+#payment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .left{
     flex-basis: 50%;
 
@@ -28,22 +33,22 @@ h2{
     flex-basis: 50%;
     margin: 0px 30px;
 }
-form{
+section{
     padding: 10px;
 }
-form input[type="text"]{
+section input[type="text"]{
     width: 100%;
     margin: 0.5rem 0;
     padding: 0.5rem 0.7rem;
     outline: none;
 }
-form input[type="email"]{
+section input[type="email"]{
     width: 100%;
     margin: 0.5rem 0;
     padding: 0.5rem 0.7rem;
     outline: none;
 }
-form input[type="number"]{
+section input[type="number"]{
     width: 100%;
     margin: 0.5rem 0;
     padding: 0.5rem 0.7rem;
@@ -67,12 +72,12 @@ form input[type="number"]{
     padding: 0.5rem 0.7rem; 
     outline: none;
 }
-form img{
+section img{
     height: 50px;
     width: 85px;
     margin-top: 8px;
 }
-form button{
+section button{
     background-color: #001f49;
     color: white;
     width: 100%;
