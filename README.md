@@ -1,6 +1,6 @@
-## Clone Project Name - 
+## Clone Project Name - CharlesTyrwhitt Clone
 
-## 
+ 
 
 ✨project Owner:-
 
@@ -9,13 +9,8 @@
 
 💻Unique Project Name & logo :- TM-Collections 
 
-
-
 💫Tech-Stack->
  HTML5, CSS3, Javascript, ES6,Bootstrap.
-
-
-
 
 ## Features ✨
 
@@ -49,7 +44,7 @@
 
 ---
 
-⭐Deployed Link:-https://subtle-mochi-e00f51.netlify.app/index.html
+⭐Deployed Link:-[https://subtle-mochi-e00f51.netlify.app/index.html](https://classy-travesseiro-42d3f1.netlify.app/)https://classy-travesseiro-42d3f1.netlify.app/
 
 ---
 
