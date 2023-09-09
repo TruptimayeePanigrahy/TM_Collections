@@ -15,23 +15,16 @@
 ## Features ✨
 
 - HomePage , Carousal , Navbar, Footer
-
 - Product Gallery
-
 - Cart Page
-
 - Sign Up , Login
-- 
-
-
+- Admin Side
+- payment page
+- checkout Page
 
 ## Screenshots 📷
 
----
-
 # HomePage
-
-
 
 # Signup | Login
 
