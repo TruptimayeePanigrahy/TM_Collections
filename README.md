@@ -8,6 +8,8 @@
 <br>
 
 💻Unique Project Name & logo :- TM-Collections 
+![favicon](https://github.com/TruptimayeePanigrahy/TM_Collections/assets/119392105/8274a9ff-28d6-4d48-a97d-9b59a3b1dbe0)
+
 
 💫Tech-Stack->
  HTML5, CSS3, Javascript, ES6,Bootstrap.
